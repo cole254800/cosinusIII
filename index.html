@@ -10,7 +10,13 @@
 	
 	<style>
 	
-        div{border: 1px solid black;}
+        #main {border: 8px solid black; display: inline-block;}
+        
+        #main>div{white-space: nowrap; padding: 0; margin: 0; max-height: 150px; }
+        
+        div#main div div {background: red; width: 150px; height: 150px; display: inline-block; border: 16px solid black;  box-sizing: border-box;}
+        
+        
 		
 	</style>
 
@@ -21,20 +27,9 @@
 
 
     
-    <!--div>
-        <div>
-            <div></div><div></div><div></div>
-        </div>
-        <div>
-            <div></div><div></div><div></div>
-        </div>
-        <div>
-            <div></div><div></div><div></div>
-        </div>
-    </div-->
     
     
-    <div id="main">ss</div>
+    <div id="main"></div>
     
     
 </body>
@@ -48,7 +43,7 @@
         zfc.setAttribute('id',Math.random());
         */
         
-        sz(30,30);
+        sz(3,3);
         
         function sz(w,h){
             
