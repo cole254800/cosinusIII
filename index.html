@@ -10,7 +10,7 @@
 	
 	<style>
 	
-		
+        div{border: 1px solid black;}
 		
 	</style>
 
@@ -20,5 +20,48 @@
 <body>
 
 
+    
+    <!--div>
+        <div>
+            <div></div><div></div><div></div>
+        </div>
+        <div>
+            <div></div><div></div><div></div>
+        </div>
+        <div>
+            <div></div><div></div><div></div>
+        </div>
+    </div-->
+    
+    
+    <div id="main">ss</div>
+    
+    
 </body>
+    
+    
+    
+    <script>
+        /*
+        var el = document.createElement('div');
+        zfc=document.querySelector('#main').appendChild(el);
+        zfc.setAttribute('id',Math.random());
+        */
+        
+        sz(30,30);
+        
+        function sz(w,h){
+            
+            for(i=0;i<h;i++){
+                el = document.createElement('div');
+                zfc=document.querySelector('#main').appendChild(el);
+                for(k=0;k<w;k++){
+                    el2 = document.createElement('div');
+                    zfc.appendChild(el2);
+                }
+            }
+            
+            
+        }
+    </script>
 </html>
