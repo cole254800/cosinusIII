@@ -10,11 +10,13 @@
 	
 	<style>
 	
-        #main {border: 8px solid black; display: inline-block;}
+        #main {border: 2px solid black; display: inline-block;}
         
         #main>div{white-space: nowrap; padding: 0; margin: 0; max-height: 150px; }
         
-        div#main div div {background: red; width: 150px; height: 150px; display: inline-block; border: 16px solid black;  box-sizing: border-box;}
+        div#main div div {background: red; width: 150px; height: 150px; 
+display: inline-block; border: 4px solid black; 
+ box-sizing: border-box;}
         
         
 		
@@ -52,7 +54,12 @@
                 zfc=document.querySelector('#main').appendChild(el);
                 for(k=0;k<w;k++){
                     el2 = document.createElement('div');
-                    zfc.appendChild(el2);
+                    s=zfc.appendChild(el2);
+		    //el2.innerHTML = k+','+i; //temp
+		    el2.setAttribute('id',k+'-'+i);
+		    el2.setAttribute('class','kwadrat');
+		    el2.setAttribute('data-y',i);
+		    el2.setAttribute('data-x',k);
                 }
             }
             
