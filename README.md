@@ -7,3 +7,5 @@
 
 
 Gra na zajecia semestru III
+
+tu data.
