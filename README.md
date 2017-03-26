@@ -8,4 +8,4 @@
 
 Gra na zajecia semestru III
 
-Zakończono na zajęciach, dn. 26.03.2017
+B1, dn. 26.03.2017
