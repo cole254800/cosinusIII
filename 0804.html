@@ -1,0 +1,212 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>GRA</title>
+	
+
+	<style>
+	
+       
+ #main {border: 2px solid black; display: inline-block;}
+        
+
+        #main>div{white-space: nowrap; padding: 0; margin: 0; max-height: 150px; }
+        
+      
+  div#ddmain div div , .kwadrat{background: #9F000F;
+ width: 150px; height: 150px; 
+display: 
+inline-block; border: 4px solid black; 
+ 
+box-sizing: border-box; position: relative;}
+ 
+
+
+.kwadrat>div { display: block; position: absolute; }
+
+
+
+		#circle {
+	    top: 10px;
+    left: 10px;	width:120px; height:120px; display:block;z-index: 4;
+		border-radius:120px;
+		background: #ad0a0a;
+background: -moz-radial-gradient(right top, ellipse cover, #ffa500 0%, #800517 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(right top, ellipse cover, #ffa500 0%,#800517 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at right top, #ffa500 0%,#800517 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa500', endColorstr='#800517',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+		}
+		
+.cien {
+		
+
+width:80px; 
+height:30px;
+		display:block;
+		
+position:relative;
+		bottom:28px;
+		
+opacity: 0.8;
+		filter: alpha(opacity=80); /* IE8 */
+
+		left:10px;
+		z-index:3;
+		
+background-color:black;
+		
+border-radius:100px / 40px;
+		
+-moz-border-radius:100px / 40px;
+		
+-webkit-filter: blur(5px);
+		
+-moz-filter: blur(5px);
+		-o-filter: blur(5px);
+	
+	-ms-filter: blur(5px);
+		filter: blur(5px);
+		}
+		.refleks {
+		width:30px; height:30px;
+		display:block;
+		position:absolute;
+		top:24px; left:65px;
+		opacity: 0.5;
+		filter: alpha(opacity=40); /* IE8 */
+		z-index:999;
+		background-color:white;
+		border-radius:100px / 40px;
+		-moz-border-radius:100px / 40px;
+		-webkit-filter: blur(10px);
+		-moz-filter: blur(10px);
+		-o-filter: blur(10px);
+		-ms-filter: blur(10px);
+		filter: blur(10px);
+		}
+		
+		#postac {
+		width:150px;
+		height:150px;
+		position:relative;
+		}
+        
+        
+		
+	</style>
+
+
+</head>
+
+<body>
+
+
+    
+    
+    
+    <div id="main"></div>
+	
+	<div id="postac">
+	<div class="refleks"></div>
+	<div id="circle"></div>
+	
+<div class="cien"></div>
+	</div>
+	
+    
+    
+
+
+
+
+
+
+
+
+
+</body>
+    
+    
+    
+    <script>
+        /*
+        var el = document.createElement('div');
+       
+ zfc=document.querySelector('#main').appendChild(el);
+        zfc.setAttribute('id',Math.random());
+        */
+        
+		
+		var maxx=6;
+		var maxy=4;
+		
+        sz(maxx,maxy);
+        
+        function sz(w,h){
+            
+            for(i=0;i<h;i++){
+                el = document.createElement('div');
+                zfc=document.querySelector('#main').appendChild(el);
+                for(k=0;k<w;k++){
+                    el2 = document.createElement('div');
+                    s=zfc.appendChild(el2);
+		    //el2.innerHTML = k+','+i; //temp
+		    el2.setAttribute('id',k+'-'+i);
+		    el2.setAttribute('class','kwadrat');
+		    el2.setAttribute('data-y',i);
+		    el2.setAttribute('data-x',k);
+                }
+            }
+            
+            
+        }
+    </script>
+
+
+
+
+<script>
+
+var kx=(Math.round(Math.random() * (maxx-1)));
+var ky=(Math.round(Math.random() * (maxy-1)));
+
+
+
+function k(x,y)
+{
+	zm = x + '-' + y;
+	//console.log(zm);
+	el = document.getElementById(zm);
+	if(el === null || el==='undefined'){ 
+		return false; 
+	}
+	
+	html_postaci = document.querySelector('#postac').innerHTML;
+	document.querySelector('#postac').innerHTML="";
+	
+	el.innerHTML =  html_postaci ;
+	kx=x;
+	ky=y;
+}
+
+//k(1,1);
+k(kx,ky);
+console.log(kx+','+ky);
+
+function klik(e){
+	console.log(e);
+	return false;
+}
+
+
+document.addEventListener('keydown',  klik );
+
+</script>
+
+
+</html>
