@@ -1,0 +1,92 @@
+<!--zegar.html-->
+
+
+<html>
+
+
+<style>
+html{--z: 37;}
+
+
+
+.a {width: 300px; height: 300px; margin: 50px 0 0 50px; background: gray;
+border-radius: 100%; position: relative;
+}
+.hand{color: white; width: 30px; text-align: center; height: 50%;
+	position: absolute;
+	left: 135px; top: 0;
+	transition: all 2s linear;
+	transform-origin: 50% bottom;
+	
+}
+.sec {background: white; width: 4px; height: 50%; 
+position: absolute; left: 148px; top: 0;
+transform-origin: 50% bottom;
+transition: all .4s ease;
+
+
+transform: rotate(calc(var(--z)*1deg));
+
+}
+
+</style>
+<div class="a">
+	<div class="hand">1</div>
+	<div class="hand">2</div>
+	<div class="hand">3</div>
+	<div class="hand">4</div>
+	<div class="hand">5</div>
+	<div class="hand">6</div>
+	<div class="hand">7</div>
+	<div class="hand">8</div>
+	<div class="hand">9</div>
+	<div class="hand">10</div>
+	<div class="hand">11</div>
+	<div class="hand">12</div>
+	
+	<div class="sec"></div>
+</div>
+
+<script>
+
+	const h=document.querySelectorAll('.hand');
+	h.forEach( function(t){ 
+		
+		a = (t.innerHTML)*30;
+		
+		//console.log("rotate("  +  a +   "deg)");
+		t.style.transform=`rotate(${a}deg)`;
+	} );
+
+	
+	///////////////////////////////////////////////////
+	
+	
+	
+	x = new Date();
+	s = x.getSeconds()*6;
+	console.log(s);
+	//document.querySelector('.sec').style.transform = `rotate(${s}deg)`;
+	
+	
+	
+	
+	function pdk(){
+		x = new Date();
+		s = x.getSeconds()*6;
+		document.querySelector('html').style.setProperty('--z',s);
+		setTimeout(pdk,1000);
+	}
+	
+	
+	setTimeout(pdk,1);
+
+
+     	
+	
+	
+
+</script>
+
+
+</html>
