@@ -1,0 +1,68 @@
+<html>
+
+
+<style>
+
+html{ --p1: 0; }
+
+.pasek {border: 1px #e9e9e9 solid;
+height: 15px;
+width: 150px;
+position: relative;
+padding: 2px;
+overflow: hidden;
+}
+
+.pasek>div {
+	height: 100%;
+	width:calc(var(--p1)*1%);
+	background: red;
+}
+.pasek>div>div {  line-height: 1; font-size: 10px; display: block; position: absolute;
+width: 100px; left: 25px; text-align: center; color: grey; top: 4px;
+}
+
+
+</style>
+
+<div class="pasek"><div><div></div></div></div>
+	
+<script>
+
+
+
+
+
+
+function k(x){
+	//document.querySelector('html').style.setProperty('--p1',x);
+	
+	if(x>100 || x<0) return false;
+	document.querySelector('.pasek div').style.width=`${x}%`;
+	
+}
+
+var t = 150; //s
+
+function sTime(t3){
+	console.log(t3);
+	k(t3*100/t);
+	
+	document.querySelector('.pasek>div>div').innerHTML = ''+t3;
+	t3--;
+	if(t3<0) return false;
+	setTimeout(  function() {  sTime(t3); }  ,50);
+}
+
+sTime(t);
+
+
+
+
+
+
+//k(95);
+</script>
+
+
+</html>
