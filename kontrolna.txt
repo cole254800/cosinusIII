@@ -1,0 +1,10 @@
+Kamil 
+K
+4
+13.05.2017
+
+Sem III 2017 (Aplikacje Internetowe) 
+
+	
+
+Tworz¹c aplikacjê internetow¹ w razie potrzeby dodania animacji, u¿y³bym animacji CSS, poniewa¿ za jej pomoc¹ mo¿na w szybki i doœæ prosty sposób stworzyæ wydajn¹ animacjê, która zbytnio nie bêdzie obci¹¿aæ tworzonej aplikacji.
