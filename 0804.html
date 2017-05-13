@@ -174,10 +174,11 @@ border-radius:100px / 40px;
 
 var kx=(Math.round(Math.random() * (maxx-1)));
 var ky=(Math.round(Math.random() * (maxy-1)));
+const html_postaci = document.querySelector('#postac').innerHTML;
+document.querySelector('#postac').innerHTML="";
 
 
-
-function k(x,y)
+function k(x,y,dir=false)
 {
 	zm = x + '-' + y;
 	//console.log(zm);
@@ -186,8 +187,9 @@ function k(x,y)
 		return false; 
 	}
 	
-	html_postaci = document.querySelector('#postac').innerHTML;
-	document.querySelector('#postac').innerHTML="";
+	
+	//
+    document.querySelectorAll('.kwadrat').forEach( function(elll){ elll.innerHTML="";} );
 	
 	el.innerHTML =  html_postaci ;
 	kx=x;
@@ -199,7 +201,19 @@ k(kx,ky);
 console.log(kx+','+ky);
 
 function klik(e){
-	console.log(e);
+	console.log(e.keyCode);
+    if(e.keyCode==39) { 
+        setTimeout(function(){ k(kx+1,ky); }, 500); 
+    }
+    if(e.keyCode==37) { 
+        setTimeout(function(){ k(kx-1,ky); }, 500); 
+    }
+    if(e.keyCode==40) { 
+        setTimeout(function(){ k(kx,ky+1); }, 500); 
+    }
+    if(e.keyCode==38) { 
+        setTimeout(function(){ k(kx,ky-1); }, 500); 
+    }
 	return false;
 }
 
